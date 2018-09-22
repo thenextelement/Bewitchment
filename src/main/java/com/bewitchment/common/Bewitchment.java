@@ -25,6 +25,7 @@ import com.bewitchment.common.core.capability.energy.MagicPowerContainer;
 import com.bewitchment.common.core.capability.energy.MagicPowerUsingItem;
 import com.bewitchment.common.core.capability.energy.player.expansion.CapabilityMPExpansion;
 import com.bewitchment.common.core.capability.mimic.CapabilityMimicData;
+import com.bewitchment.common.core.capability.resize.CapabilitySize;
 import com.bewitchment.common.core.capability.simple.BarkCapability;
 import com.bewitchment.common.core.capability.simple.SimpleCapability;
 import com.bewitchment.common.core.command.*;
@@ -103,12 +104,14 @@ public class Bewitchment {
 		CapabilityMimicData.init();
 		CapabilityMPExpansion.init();
 		SimpleCapability.preInit(BarkCapability.class, LibMod.MOD_ID, BarkCapability.CAPABILITY, BarkCapability.DEFAULT_INSTANCE);
+		CapabilitySize.init();
 		NetworkHandler.init();
 		ModInfusions.init();
 		ModTransformations.init();
 		ModEntities.init();
 		ModSpells.init();
 		ModFortunes.init();
+		
 		ModAbilities.dummyMethodToLoadClass();
 		ModLootTables.registerLootTables();
 		FrostFireRecipe.init();
