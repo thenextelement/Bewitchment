@@ -1,20 +1,21 @@
 package com.bewitchment.common.tile.tiles;
 
-import com.bewitchment.common.Bewitchment;
+import javax.annotation.Nullable;
+
 import com.bewitchment.common.block.ModBlocks;
 import com.bewitchment.common.core.handler.ModSounds;
 import com.bewitchment.common.core.helper.ItemHandlerHelper;
+import com.bewitchment.common.core.helper.PlayerSizeHelper;
 import com.bewitchment.common.item.ModItems;
-import com.bewitchment.common.lib.LibGui;
 import com.bewitchment.common.tile.ModTileEntity;
 import com.bewitchment.common.tile.util.AutomatableInventory;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
@@ -29,8 +30,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
-
-import javax.annotation.Nullable;
 
 /**
  * This class was created by Arekkuusu on 16/04/2017.
@@ -68,22 +67,27 @@ public class TileEntityApiary extends ModTileEntity implements ITickable, IWorld
 	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 		if (playerIn.isSneaking()) {
+			PlayerSizeHelper.resetPlayerSize(playerIn);
 			return false;
 		}
+		
+		PlayerSizeHelper.setPlayerScale(playerIn, 2);
 		if (worldIn.isRemote) {
 			return true;
 		}
-
-		ItemStack heldItem = playerIn.getHeldItem(hand);
-		if (!heldItem.isEmpty() && heldItem.getItem() == Items.NAME_TAG) {
-			this.customName = heldItem.getDisplayName();
-			this.markDirty();
-			this.syncToClient();
-			return true;
-		}
-
-		playerIn.openGui(Bewitchment.instance, LibGui.APIARY.ordinal(), worldIn, pos.getX(), pos.getY(), pos.getZ());
 		return true;
+		
+
+//		ItemStack heldItem = playerIn.getHeldItem(hand);
+//		if (!heldItem.isEmpty() && heldItem.getItem() == Items.NAME_TAG) {
+//			this.customName = heldItem.getDisplayName();
+//			this.markDirty();
+//			this.syncToClient();
+//			return true;
+//		}
+//
+//		playerIn.openGui(Bewitchment.instance, LibGui.APIARY.ordinal(), worldIn, pos.getX(), pos.getY(), pos.getZ());
+//		return true;
 	}
 
 	@Override
