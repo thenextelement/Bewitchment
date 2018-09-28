@@ -211,20 +211,20 @@ public final class ModBlocks {
 				new BlockPurifyingEarth()
 		);
 		//Normal Blocks
-		//Todo: Make gem blocks valid infusion stabilizers for Thaumcraft. Also, make them all use metadata.
+		//Todo: Make gem blocks all use metadata.
 		registry.registerAll(
 				new BlockMod(LibBlockName.SILVER_BLOCK, Material.IRON).setSound(SoundType.METAL).setHardness(5.0F),
 				new BlockMod(LibBlockName.COLD_IRON_BLOCK, Material.IRON).setSound(SoundType.METAL).setHardness(5.0F),
 				new BlockMod(LibBlockName.NETHERSTEEL, Material.IRON).setSound(SoundType.METAL).setHardness(5.0F),
-				new BlockMod(LibBlockName.TOURMALINE_BLOCK, Material.ROCK).setHardness(5.0F),
-				new BlockMod(LibBlockName.BLOODSTONE_BLOCK, Material.ROCK).setHardness(5.0F),
-				new BlockMod(LibBlockName.MALACHITE_BLOCK, Material.ROCK).setHardness(5.0F),
-				new BlockMod(LibBlockName.TIGERS_EYE_BLOCK, Material.ROCK).setHardness(5.0F),
-				new BlockMod(LibBlockName.NUUMMITE_BLOCK, Material.ROCK).setHardness(5.0F),
-				new BlockMod(LibBlockName.ALEXANDRITE_BLOCK, Material.ROCK).setHardness(5.0F),
-				new BlockMod(LibBlockName.JASPER_BLOCK, Material.ROCK).setHardness(5.0F),
-				new BlockMod(LibBlockName.AMETHYST_BLOCK, Material.ROCK).setHardness(5.0F),
-				new BlockMod(LibBlockName.GARNET_BLOCK, Material.ROCK).setHardness(5.0F),
+				new GemBlocks(LibBlockName.TOURMALINE_BLOCK, Material.ROCK).setHardness(5.0F),
+				new GemBlocks(LibBlockName.BLOODSTONE_BLOCK, Material.ROCK).setHardness(5.0F),
+				new GemBlocks(LibBlockName.MALACHITE_BLOCK, Material.ROCK).setHardness(5.0F),
+				new GemBlocks(LibBlockName.TIGERS_EYE_BLOCK, Material.ROCK).setHardness(5.0F),
+				new GemBlocks(LibBlockName.NUUMMITE_BLOCK, Material.ROCK).setHardness(5.0F),
+				new GemBlocks(LibBlockName.ALEXANDRITE_BLOCK, Material.ROCK).setHardness(5.0F),
+				new GemBlocks(LibBlockName.JASPER_BLOCK, Material.ROCK).setHardness(5.0F),
+				new GemBlocks(LibBlockName.AMETHYST_BLOCK, Material.ROCK).setHardness(5.0F),
+				new GemBlocks(LibBlockName.GARNET_BLOCK, Material.ROCK).setHardness(5.0F),
 				new BlockMod(LibBlockName.COQUINA, Material.ROCK).setHardness(5.0F),
 				new BlockMod(LibBlockName.EMBITTERED_BRICKS, Material.ROCK).setSound(SoundType.STONE).setHardness(5.0F),
 				new BlockMod(LibBlockName.SCORNED_BRICKS, Material.ROCK).setSound(SoundType.STONE).setHardness(5.0F),
